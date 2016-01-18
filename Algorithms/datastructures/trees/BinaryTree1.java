@@ -1,4 +1,4 @@
-package datastructures;
+package datastructures.trees;
 public class BinaryTree1 {
 	Node root;
 	public void addNode(int key, String name) {
