@@ -1,4 +1,4 @@
-package com.anvesh.coursera.ds;
+package search;
 
 public class BinarySearch1 {
 
