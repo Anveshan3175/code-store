@@ -5,6 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/*
+ * For M union-find operations on a set of N objects
+ * QF -> MN
+ * QU -> MN
+ * Weighted QU -> N+ M logN
+ * QU + Path Compression -> N + M logN
+ * Weighted QU + Path Compression -> N + log*N
+ */
 public class QuickUnionJunit {
 
 	private QuickUnionUF uf;
@@ -17,7 +25,7 @@ public class QuickUnionJunit {
 		wuf = new WeightedQuickUnionUF(10);
 	}
 	
-	//@Test
+	@Test
 	public void testConnected(){
 		uf.union(4, 3);
 		uf.union(3, 8);
@@ -35,7 +43,7 @@ public class QuickUnionJunit {
 		System.out.println(uf);
 	}
 	
-	@Test
+	//@Test
 	public void testWConnected(){
 		wuf.union(4, 3);
 		System.out.println(wuf);

@@ -38,13 +38,21 @@ public class WeightedQuickUnionUF {
 		return (root(id[p]) == root(id[q]));
 	}
 	
-	public int root(int p){
+	/*public int root(int p){
 		while(p != id[p]){
 			p = id[p];
 		}
 		return p;
-	}
+	}*/
 	
+	// to compress the tree further i.e. flatten the tree --WQUPC weighted quik union with path compression
+			public int root(int p){
+				while(p != id[p]){
+					id[p] = id[id[p]];
+					p = id[p];
+				}
+				return p;
+			}
 	
 	
 	public String toString(){
