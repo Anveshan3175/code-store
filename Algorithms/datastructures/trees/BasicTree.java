@@ -1,5 +1,8 @@
 package datastructures.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BasicTree {
 
 	public static void main(String[] args) {
@@ -60,6 +63,9 @@ public class BasicTree {
 		bt.addNode(node0);*/
 		
 		System.out.println("Completed Binay tree");
+		System.out.println("Level order traversal of Binay tree -- start");
+		bt.levelOrderTraversal(node1);
+		System.out.println("Level order traversal of Binay tree--end");
 		
 		bt.removeNode(18);
 		
@@ -140,6 +146,22 @@ class BinaryTree {
 		}
 		
 		return null;
+	}
+	
+	public void levelOrderTraversal(Node startNode){
+		Queue<Node> ll = new LinkedList<Node>();
+		ll.add(startNode);
+		
+		while(!ll.isEmpty()){
+			Node currentNode = ll.remove();
+			System.out.print(currentNode.value+" ,");
+			if(null != currentNode){
+				if(null != currentNode.leftChild)
+					ll.add(currentNode.leftChild);
+				if(null != currentNode.rightChild)
+					ll.add(currentNode.rightChild);
+			}
+		}
 	}
 	
 	public void postOrderTraversal(Node startNode){
