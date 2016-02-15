@@ -1,9 +1,35 @@
 package stack;
 
+import java.util.Iterator;
+
 public class MAStack1<E>{
 
 	private Node<E> first;
 	int size;
+	
+	
+	public Iterator<E> iterator(){
+		return  new StackIterator();
+	}
+	private class StackIterator implements Iterator<E>{
+
+		private Node<E> current = first;
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return current.next != null;
+		}
+
+		@Override
+		public E next() {
+			// TODO Auto-generated method stub
+			Node<E> node = current.next;
+			current = current.next;
+			return node.value;
+		}
+		
+	}
+	
 	
 	public boolean isEmpty(){
 		return first == null;
