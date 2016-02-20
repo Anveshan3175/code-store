@@ -14,12 +14,22 @@ public class TestCallbackImpl {
 	public void setUp() throws Exception {
 	}
 	
-	@Test
+	//@Test
 	public void testSelectionSort(){
 		
 		Integer[] elems = {56,3,26,90,17,38};
 		System.out.println(Arrays.toString(elems));
 		SelectionSort.sort(elems);
+		System.out.println(Arrays.toString(elems));
+		
+	}
+	
+	@Test
+	public void testInsertionSort(){
+		
+		Integer[] elems = {56,3,26,90,17,38};
+		System.out.println(Arrays.toString(elems));
+		InsertionSort.sort(elems);
 		System.out.println(Arrays.toString(elems));
 		
 	}
