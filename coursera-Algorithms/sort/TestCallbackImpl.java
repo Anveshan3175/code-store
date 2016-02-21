@@ -14,6 +14,13 @@ public class TestCallbackImpl {
 	public void setUp() throws Exception {
 	}
 	
+	@Test
+	public void testShellSort(){
+		Integer[] elems = {56,3,26,42,17,38,9,65,79,23,7,86,35};
+		System.out.println("Calling shell sort with these inputs :"+Arrays.toString(elems));
+		ShellSort.sort(elems);
+		System.out.println("Finished shell sort with these inputs :"+Arrays.toString(elems));
+	}
 	//@Test
 	public void testSelectionSort(){
 		
@@ -27,10 +34,10 @@ public class TestCallbackImpl {
 	@Test
 	public void testInsertionSort(){
 		
-		Integer[] elems = {56,3,26,90,17,38};
-		System.out.println(Arrays.toString(elems));
+		Integer[] elems = {56,3,26,42,17,38,9,65,79,23,7,86,35};
+		System.out.println("Calling Insertion sort with these inputs :"+Arrays.toString(elems));
 		InsertionSort.sort(elems);
-		System.out.println(Arrays.toString(elems));
+		System.out.println("Finished Insertion sort with these inputs :"+Arrays.toString(elems));
 		
 	}
 
