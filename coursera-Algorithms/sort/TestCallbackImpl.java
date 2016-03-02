@@ -15,6 +15,17 @@ public class TestCallbackImpl {
 	}
 	
 	@Test
+	public void testMergeSort(){
+		Integer[] elems = {56,3,26,42,17,38,9,65,79,23,7,86,35,13};
+		//Integer[] elems = {9,2,45,7,3};
+		System.out.println("Calling Merge sort with these inputs :"+Arrays.toString(elems));
+		MergeSort.mergeSort(elems,0,elems.length-1);
+		//MergeSort.bottomUpMergeSort(elems);
+		//MergeSort.bottomUpMergeSort(elems,0,elems.length-1);
+		System.out.println("Finished Merge sort with these inputs :"+Arrays.toString(elems));
+	}
+	
+	//@Test
 	public void testShellSort(){
 		Integer[] elems = {56,3,26,42,17,38,9,65,79,23,7,86,35};
 		System.out.println("Calling shell sort with these inputs :"+Arrays.toString(elems));
@@ -31,7 +42,7 @@ public class TestCallbackImpl {
 		
 	}
 	
-	@Test
+	//@Test
 	public void testInsertionSort(){
 		
 		Integer[] elems = {56,3,26,42,17,38,9,65,79,23,7,86,35};

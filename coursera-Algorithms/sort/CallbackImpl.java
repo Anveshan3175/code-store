@@ -40,6 +40,24 @@ public class CallbackImpl {
 		
 		return true;
 	}
+	
+	public static void merge(Comparable[] elements,int low,int high,int mid) {
+		
+		Comparable[] temp = new Comparable[elements.length];
+		int j = mid+1;
+		int i = low;
+		for(int k = low;k <= high;k++){
+			if(j > high) 							temp[k] = elements[i++];   // high sub array is exhausted..so copy all the small sub array
+			else if (i > mid) 						temp[k] = elements[j++];   // small sub array is exhausted..so copy all the high sub array
+			else if(less(elements[i],elements[j]))  temp[k] = elements[i++];
+			else 									temp[k] = elements[j++];
+		}
+		
+		for(int k = low; k <= high;k++){
+			elements[k] = temp[k];
+		}
+	}
+	
 }
 
 
